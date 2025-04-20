@@ -7,8 +7,12 @@ interface Props {}
 const Main = (props: Props) => {
   const navigate = useNavigate();
 
-  const handleGetStarted = () => {
-    navigate("/selection");
+  const handleUseCamera = () => {
+    navigate("/camera");
+  };
+
+  const handleUploadPhoto = () => {
+    navigate("/upload");
   };
 
   return (
@@ -21,9 +25,18 @@ const Main = (props: Props) => {
           className="cursor-pointer bg-yellow-600 rounded-lg min-w-50 
                      text-xl border-1 border-neutral-600 py-2 
                      hover:bg-yellow-400 transition-colors delay-100 font-semibold"
-          onClick={() => handleGetStarted()}
+          onClick={() => handleUseCamera()}
         >
-          Get Started
+          USE CAMERA
+        </button>
+        <button
+          type="button"
+          className="cursor-pointer bg-yellow-600 rounded-lg min-w-50 
+                     text-xl border-1 border-neutral-600 py-2 
+                     hover:bg-yellow-400 transition-colors delay-100 font-semibold"
+          onClick={() => handleUploadPhoto()}
+        >
+          UPLOAD PHOTO
         </button>
       </div>
     </>
