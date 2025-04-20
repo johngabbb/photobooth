@@ -6,7 +6,7 @@ interface Props {}
 const Layout = (props: Props) => {
   return (
     <>
-      <div className="bg-cyan-700 h-screen w-full">
+      <div className="bg-[#FFFFED] h-screen w-full">
         <Outlet />
       </div>
     </>
