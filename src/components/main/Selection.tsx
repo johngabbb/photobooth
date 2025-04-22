@@ -21,7 +21,6 @@ const Selection = (props: Props) => {
 
   const handleUpload = () => {
     if (selectedTemplate) {
-      // Pass the selected template as state when navigating
       navigate("/upload", { state: { templateType: selectedTemplate } });
     } else {
       alert("Please select a template first");
@@ -83,7 +82,7 @@ const Selection = (props: Props) => {
                       }`}
               onClick={() => handleTemplateSelect("2x1")}
             >
-              <div className="h-40 p-2">
+              <div className="h-45 p-2">
                 <TwoByOneTemplate />
               </div>
             </div>
@@ -100,41 +99,45 @@ const Selection = (props: Props) => {
                       }`}
               onClick={() => handleTemplateSelect("3x1")}
             >
-              <div className="h-40 p-2">
+              <div className="h-45 p-2">
                 <ThreeByOneTemplate />
               </div>
             </div>
             <div className="pt-2 text-center text-sm font-medium">3x1 Layout</div>
           </div>
 
-          <div
-            className={`h-50 w-35 border-2 rounded-lg overflow-hidden cursor-pointer 
+          <div>
+            <div
+              className={`h-50 w-35 border-2 rounded-lg overflow-hidden cursor-pointer 
                       ${
                         selectedTemplate === "2x2"
                           ? "border-yellow-500 shadow-lg"
                           : "border-gray-300"
                       }`}
-            onClick={() => handleTemplateSelect("2x2")}
-          >
-            <div className="p-2 bg-gray-100 text-center text-sm font-medium">2x2 Layout</div>
-            <div className="h-40 p-2">
-              <TwoByTwoTemplate />
+              onClick={() => handleTemplateSelect("2x2")}
+            >
+              <div className="h-45 p-2">
+                <TwoByTwoTemplate />
+              </div>
             </div>
+            <div className="pt-2 text-center text-sm font-medium">2x2 Layout</div>
           </div>
 
-          <div
-            className={`h-50 w-35 border-2 rounded-lg overflow-hidden cursor-pointer 
+          <div>
+            <div
+              className={`h-50 w-35 border-2 rounded-lg overflow-hidden cursor-pointer 
                       ${
                         selectedTemplate === "1plus2"
                           ? "border-yellow-500 shadow-lg"
                           : "border-gray-300"
                       }`}
-            onClick={() => handleTemplateSelect("1plus2")}
-          >
-            <div className="p-2 bg-gray-100 text-center text-sm font-medium">1+2 Layout</div>
-            <div className="h-40 p-2">
-              <OnePlusTwoTemplate />
+              onClick={() => handleTemplateSelect("1plus2")}
+            >
+              <div className="h-45 p-2">
+                <OnePlusTwoTemplate />
+              </div>
             </div>
+            <div className="pt-2 text-center text-sm font-medium">1+2 Layout</div>
           </div>
         </div>
 
