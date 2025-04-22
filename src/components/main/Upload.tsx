@@ -50,7 +50,7 @@ const Upload = (props: Props) => {
     <div className="h-full w-full flex flex-col items-center justify-center">
       <div
         className={`${
-          photoOrientation === "landscape" ? "grid grid-rows-3" : "grid grid-cols-3"
+          photoOrientation === "landscape" ? "grid grid-cols-3" : "grid grid-rows-3"
         } border-1 border-neutral-900`}
       >
         {photos.map((image, index) => (
