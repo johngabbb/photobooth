@@ -76,13 +76,13 @@ const Upload = (props: Props) => {
     switch (templateType) {
       case "2x1":
         return (
-          <div className="grid grid-cols-2 gap-4 w-full max-w-lg">
+          <div className="grid grid-rows-2 gap-4 w-full max-w-xs">
             {photos.map((photo, index) => renderPhotoUploader(photo, index))}
           </div>
         );
       case "3x1":
         return (
-          <div className="grid grid-cols-3 gap-4 w-full max-w-lg">
+          <div className="grid grid-rows-3 gap-4 w-full max-w-lg">
             {photos.map((photo, index) => renderPhotoUploader(photo, index))}
           </div>
         );

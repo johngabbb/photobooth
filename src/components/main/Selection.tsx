@@ -3,16 +3,18 @@ import { useNavigate } from "react-router-dom";
 
 interface Props {}
 
-// Define the template types and their layouts
 type TemplateType = "2x1" | "3x1" | "2x2" | "1plus2";
 
 const Selection = (props: Props) => {
   const navigate = useNavigate();
   const [selectedTemplate, setSelectedTemplate] = useState<TemplateType | null>(null);
 
+  const handleBack = () => {
+    navigate("/");
+  };
+
   const handleCamera = () => {
     if (selectedTemplate) {
-      // Pass the selected template as state when navigating
       navigate("/camera", { state: { templateType: selectedTemplate } });
     } else {
       alert("Please select a template first");
@@ -31,7 +33,6 @@ const Selection = (props: Props) => {
     setSelectedTemplate(template);
   };
 
-  // Template components
   const TwoByOneTemplate = () => (
     <div className="grid grid-rows-2 gap-1 h-full w-full">
       <div className="bg-gray-200 h-full"></div>
