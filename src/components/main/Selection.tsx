@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Header from "../Layout/Header";
 
 interface Props {}
 
@@ -69,9 +70,8 @@ const Selection = (props: Props) => {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center h-full w-full space-y-8">
-        <h2 className="text-2xl font-bold">Select a template</h2>
-
+      <Header />
+      <div className="flex flex-col items-center justify-center h-full w-full space-y-8 pt-28">
         <div className="grid grid-cols-2 grid-rows-2 gap-5 max-w-2xl">
           <div>
             <div
@@ -145,7 +145,7 @@ const Selection = (props: Props) => {
         <div className="flex flex-row space-x-6 mt-8">
           <button
             type="button"
-            className="cursor-pointer bg-yellow-600 rounded-lg px-6
+            className="cursor-pointer bg-[#e2aa31] rounded-lg px-6
                      text-xl border border-neutral-600 py-2 
                      hover:bg-yellow-400 transition-colors delay-100 font-semibold"
             onClick={() => handleCamera()}
@@ -154,7 +154,7 @@ const Selection = (props: Props) => {
           </button>
           <button
             type="button"
-            className="cursor-pointer bg-yellow-600 rounded-lg px-6
+            className="cursor-pointer bg-[#e2aa31] rounded-lg px-6
                      text-xl border border-neutral-600 py-2 
                      hover:bg-yellow-400 transition-colors delay-100 font-semibold"
             onClick={() => handleUpload()}

@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import Header from "../Layout/Header";
 
 type Props = {};
 
@@ -153,40 +154,43 @@ const Upload = (props: Props) => {
   };
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center p-4 space-y-6">
-      <h2 className="text-2xl font-bold">Upload Photos</h2>
-      <p className="text-gray-600">Template: {templateType}</p>
+    <>
+      <Header />
+      <div className="h-full w-full flex flex-col items-center justify-center p-4 space-y-6 pt-28">
+        <h2 className="text-2xl font-bold">Upload Photos</h2>
+        <p className="text-gray-600">Template: {templateType}</p>
 
-      {renderPhotoGrid()}
+        {renderPhotoGrid()}
 
-      <div className="flex space-x-4 mt-6">
-        <button
-          type="button"
-          className="cursor-pointer bg-gray-300 rounded-lg px-6
-                   text-lg border border-neutral-600 py-2 
-                   hover:bg-gray-200 transition-colors delay-100"
-          onClick={() => navigate("/selection")}
-        >
-          Back
-        </button>
+        <div className="flex space-x-4 mt-6">
+          <button
+            type="button"
+            className="cursor-pointer bg-gray-300 rounded-lg px-6
+                     text-lg border border-neutral-600 py-2
+                     hover:bg-gray-200 transition-colors delay-100"
+            onClick={() => navigate("/selection")}
+          >
+            Back
+          </button>
 
-        <button
-          type="button"
-          disabled={!allPhotosSelected()}
-          className={`cursor-pointer rounded-lg px-6
-                     text-xl border border-neutral-600 py-2 
-                     transition-colors delay-100 font-semibold
-                     ${
-                       allPhotosSelected()
-                         ? "bg-yellow-600 hover:bg-yellow-400"
-                         : "bg-gray-400 cursor-not-allowed"
-                     }`}
-          onClick={handleContinue}
-        >
-          Continue
-        </button>
+          <button
+            type="button"
+            disabled={!allPhotosSelected()}
+            className={`cursor-pointer rounded-lg px-6
+                       text-xl border border-neutral-600 py-2
+                       transition-colors delay-100 font-semibold
+                       ${
+                         allPhotosSelected()
+                           ? "bg-yellow-600 hover:bg-yellow-400"
+                           : "bg-gray-400 cursor-not-allowed"
+                       }`}
+            onClick={handleContinue}
+          >
+            Continue
+          </button>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
